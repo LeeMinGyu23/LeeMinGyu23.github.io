@@ -1,0 +1,1562 @@
+@charset "UTF-8";
+
+/* 레이아웃 스타일 */
+
+html,body,#Wrap,section{
+	width:100%;
+	height:100%;
+	transition:0.5s;
+}
+
+#Wrap{
+	position:relative;
+}
+	
+body{
+	cursor: none;
+}	
+
+/* section별 배경색 지정 */
+#home{
+	background:#dee2e6;
+}
+
+#home ul li{
+	text-shadow: 2px 6px 3px gray;
+	color:black;
+	font-weight:bold;
+}
+#about{
+	background:#F2F2F2;
+}
+
+#skills{
+	background:#F2F2F2;
+}
+
+#work{
+background:#F2F2F2;
+	position:relative;
+}
+
+#contact{
+	background:#F2F2F2;
+	background-attachment:fixed;
+	background-size:100% 100%;
+	z-index:1;
+}
+
+
+/* header style */ 
+header{
+	background:rgba(0,0,0,0.7);
+	position:fixed;
+	width:100%;
+	height:70px;
+	font-size:1.5em;
+	z-index:998;
+}
+
+h1{animation:fadein 3s}
+.mAllMenu{animation:fadein 3s}
+
+@keyframes fadein{
+	from{	
+		opacity:0;
+	}
+	to{
+		opacity:1;
+	}
+}
+
+@keyframes blink{
+	50%{
+		border-color:transparent;
+	}
+}
+
+
+/* topBtn style */
+#topBtn{
+	width:50px;
+	height:50px;
+	background:white;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	border-radius:50%;
+	text-align:center;
+	line-height:50px;
+	box-shadow:0 0 2px 3px rgba(0,0,0,0.5);
+}
+
+
+/* 레이아웃 스타일 끝 */
+
+/* 헤더 상세스타일 */
+header a{
+	color:white;
+}
+
+.logo{
+	position:absolute;	
+	left:10%;
+	top:50%;
+	transform:translate(-10%,-50%);
+}
+
+nav{
+	position:absolute;
+	right:10%;
+	top:50%;
+	transform:translateY(-50%);
+}
+
+nav ul{
+	
+}
+
+nav ul li{
+	float:left;
+	padding-left:50px;
+}
+
+nav ul li a{
+	padding:5px;	
+}
+
+nav a:hover, nav a.on{
+	border-bottom:2px solid red;
+	color:red !important; /* important 가장 높은 우선 순위로 한다 */ 
+}
+
+.navi ul li.on a{
+	border-bottom:2px solid red;
+	color:red !important; /* important 가장 높은 우선 순위로 한다 */ 
+}
+/* pc 삼선메뉴 상세스타일 */
+.mAllMenu{
+	width:30px;
+	height:30px;
+	position:absolute;
+	right:5%;
+	top:50%;
+	transform:translateY(-50%);
+	overflow:hidden;
+	z-index:10;
+	cursor:pointer;
+	display:none;
+}
+
+.mAllMenu ul{
+	position:relative;
+	width:100%;
+	height:100%;
+}
+
+.mAllMenu ul li{
+	width:100%;
+	height:4px;
+	background:white;
+	position:absolute;
+	transition:0.5;
+}
+
+.mAllMenu ul li:nth-child(1){
+	top:0;
+}
+
+.mAllMenu ul li:nth-child(2){
+	top:50%;
+	transform:translateY(-50%);
+}
+
+.mAllMenu ul li:nth-child(3){
+	top:26px;
+}
+
+/* 삼선메뉴 클릭시 x버튼으로 전환 */
+.mAllMenu ul.mX{
+	
+}
+
+.mAllMenu ul.mX li{
+	width:5px;
+	height:100%;
+	top:0;
+}
+
+.mAllMenu ul.mX li:hover{
+	color:red;
+}
+
+
+.mAllMenu ul.mX li:nth-child(1){
+	left:0;
+	transform:skewX(40deg);
+	transform-origin:left top;
+}
+
+.mAllMenu ul.mX li:nth-child(2){
+	background:transparent;
+}
+
+.mAllMenu ul.mX li:nth-child(3){
+	left:25px;
+	transform:skewX(-40deg);
+	transform-origin:right top;
+}
+
+/* section 상세 스타일(공통) */
+section h2{
+	padding-top:90px;
+	text-align:center;
+	font-size:3.5em;
+}
+
+section h2 span{
+	color:white;
+	border-top:5px solid rgba(255,0,0,0.7);
+	font-size:1.5em;
+}
+
+section .content{
+	width:80%;
+	height:72%;
+	border:1px solid skyblue;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	opacity:1;
+}
+
+#home .content{
+	margin-top:68px;
+	
+}
+#home .content ul{
+	width:50%;
+	height:100%;
+	background:rgba(255,255,255,0.5);
+	padding:20px;
+	box-sizing:border-box;
+	text-align:right;
+}
+
+.hm{
+	font-size:2em;
+}
+
+
+/* 움직이는거 색 조절할거면 이거 */
+.content>div{
+	width:45%;
+	height:100%;
+	background:rgba(255,255,255,0.5);
+	position:absolute;
+	transition:0.5s;
+}
+
+#contact .content>div,#work .content>div,#skills .content>div{
+	width:45%;
+	height:100%;
+	background:none;
+	position:absolute;
+	transition:0.5s;
+} 
+
+section:nth-child(2)>div{
+	height:45%;
+	width:100%;
+	background:rgba(255,255,255,0.5);
+	position:absolute;
+	transition:0.5s;
+}
+
+#about .top{
+	top:0;
+	width:100%;
+	height:60%;
+	padding:30px;
+}
+
+#about .bottom{
+	bottom:0;
+	width:100%;
+	height:30%;
+	
+}
+
+#about .bottom img{
+	width:15%;
+	color:blue;
+	margin-left:40%;
+	margin-top:5px;
+}
+
+#about .bottom ul {
+	overflow:auto;
+	height:95%;
+}
+
+#about .bottom ul li{
+	width:31%;
+	height:80%;
+	float:left;
+	margin-top:1%;
+	margin-left:2%;
+	box-sizing:border-box;
+	font-size:1.7em;
+	background:white;
+}
+
+
+
+#about .bottom ul li:nth-child(1){
+	margin-left:1%;
+	}
+
+#skills .left{
+	left:0;
+	transform:scale(1);
+}
+
+#skills .right{
+	right:0;
+	transform:scale(1);
+}
+
+#skills .left ul{
+	overflow:auto;
+}
+
+#skills .left ul li{
+	background:white;
+	width:45%;
+	margin-left:3%;
+	margin-top:3%;
+	float:left;
+	box-sizing:border-box;
+	height:150px;
+	border:1px solid gray;
+	background:#eee;
+}	
+
+#skills .left ul li:nth-child(1){
+	background:white;
+	width:93%;
+	margin-left:3%;
+	margin-top:3%;
+	float:left;
+	box-sizing:border-box;
+	height:150px;
+	border:1px solid gray;
+	background:#eee;
+	font-weight:bold;
+	font-size:3em;
+	padding:40px 100px;
+}	
+#skills .left ul li:nth-child(1) span{
+	margin-left:140px;
+}
+
+#skills .left ul li p{
+	margin-left:140px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li:nth-child(3) p{
+	margin-left:120px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li:nth-child(4) p{
+	margin-left:90px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li img{
+	width:20%;
+	margin-top:10px;
+	margin-left:130px;
+}	
+
+#skills .right ul{
+	overflow:auto;
+}
+
+#skills .right ul li{
+	background:white;
+	width:45%;
+	margin-left:3%;
+	margin-top:3%;
+	float:left;
+	box-sizing:border-box;
+	height:150px;
+	border:1px solid gray;
+	background:#eee;
+}	
+
+#skills .right ul li img{
+	width:20%;
+	margin-top:10px;
+	margin-left:70px;
+}	
+
+#skills .right ul li:nth-child(4) img{
+	width:15%;
+	margin-top:10px;
+	margin-left:50px;
+}	
+	
+#skills .right ul li span{
+	width:10%;
+	margin-left:30px;
+	margin-top:20px;
+	font-size:1.5em;
+	position:absolute;
+}		
+
+#skills .right ul li p{
+	margin-left:140px;
+	font-size:1.2em;
+	margin-bottom:-10px;
+	margin-top:10px;
+}
+
+
+.progress{
+  position: absolute;
+  top:0;
+  right:0;
+  z-index:99;
+}
+.progress::after{
+  content: '%';
+  
+}
+
+.progressbar{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress 5s ease forwards;
+}
+
+@keyframes progress{
+  0%{width: 0px}
+  100%{width: 60%;}
+}
+
+.progressbar2{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar2::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress2 5s ease forwards;
+}
+
+
+@keyframes progress2{
+  0%{width: 0px}
+  100%{width: 80%;}
+}
+
+.progressbar3{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar3::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress3 5s ease forwards;
+}
+
+
+@keyframes progress3{
+  0%{width: 0px}
+  100%{width: 60%;}
+}
+
+.progressbar4{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar4::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress4 5s ease forwards;
+}
+
+
+@keyframes progress4{
+  0%{width: 0px}
+  100%{width: 70%;}
+}
+
+.progressbar5{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar5::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress5 5s ease forwards;
+}
+
+
+@keyframes progress5{
+  0%{width: 0px}
+  100%{width: 75%;}
+}
+#work .left{
+	left:0;
+	height:100%;
+}
+
+#work .left ul{
+	overflow:auto
+}
+
+#work .left ul li{
+	border:1px solid gray;
+	width:45%;
+	margin-left:3.5%;
+	margin-top:3.5%;
+	float:left;
+	box-sizing:border-box;
+	height:250px;
+	background:white;
+}
+
+#work #first .left ul li{
+	width:100%;
+}
+
+#first .context{
+	font-size:5em;
+}
+
+#work .right{
+	right:0;
+	height:100%;
+}
+
+#work .right ul{
+}
+
+#work .right ul li{
+	width:95%;
+	height:60%;
+	box-sizing:border-box;
+	height:514px;
+	margin-left:2.5%;
+	margin-top:4.5%;
+	display:inline-block;
+	border:1px solid gray
+}
+
+#work .right ul li:nth-child(2){
+	background:white;
+	height:180px;
+}
+
+#seconde .right ul li{
+	width:95%;
+	height:100%;
+	float:left;
+	box-sizing:border-box;
+	height:514px;
+	margin-left:2.5%;
+	margin-top:4.5%;
+}
+
+
+#work #first .left ul li img{
+	width:100%;
+	height:100%;
+	
+}
+
+#work #first .right ul li img{
+	width:100%;
+	height:100%;
+	
+}
+
+
+#work #seconde .left ul li img{
+	width:90%;
+	height:100%;
+	
+}
+
+#work #seconde .right ul li img{
+	width:90%;
+	height:95%;
+	
+}
+#contact .left{
+	left:0;
+	width:45%;
+	display:inline-block;
+}
+
+#contact .left ul{
+	overflow:auto;
+	display:inline-block;
+}	
+
+#contact .left ul li{
+	width:25%;
+	height:140px;
+	display:block;
+	margin-top:30px;
+	margin-left:30px;
+	box-sizing:border-box;
+	float:left;
+	background:#dee2e6;
+	
+}
+
+#contact .left ul li span{
+	margin-top:10px;
+	margin-left:45px;
+	display:block;
+	font-size:1.4em;
+	font-weight:bold;
+	display:inline-block;
+}
+
+#contact .left ul li:nth-child(1) span{
+	margin-left:40px;
+}
+
+#contact .left ul li:nth-child(2n+2) span{
+	margin-top:50px;
+}
+
+#contact .left ul li img{
+	width:45%;
+	margin-left:40px;
+	margin-top:10px;
+	display:inline-block;
+}	
+
+#contact .left ul li:nth-child(2n+2){
+	margin-left:20px;
+	width:50%;
+}	
+
+#contact .right{
+	right:0;
+	width:45%;
+}
+
+input[type="text"]{
+	width:100%;	
+	border:none;
+	background:#DCEAF5;
+	height:30px;
+	margin-top:30px;
+	outline:none;
+	padding:10px;
+	font-size:1.3em;
+}
+
+input[type="button"]{
+	width:30%;
+	background:skyblue;
+	border:none;
+	outline:none;
+	margin-left:35%;
+	margin-top:15px;
+	color:black;
+	padding:10px;
+	cursor: pointer;
+	transition:2s;
+}	
+
+input[type="button"]:hover{
+	background:black;
+	color:white;
+}
+
+textarea{
+	margin-top:30px;
+	outline:none;
+	border:none;
+	background:#DCEAF5;
+	padding:10px;
+	font-size:1.3em;
+}
+
+input:focus{
+	border:none;
+}
+
+/* 문자열 세로 가운데 정렬 */
+#work .left ul{
+	display:table;
+	width:100%;
+	height:100%;
+}
+
+#work .left ul li{
+	display:table-cell;
+	text-align:center;
+	vertical-align:middle;
+	font-size:3em;
+}
+
+
+.work1{position:relative;}
+
+.box{
+	position:absolute;
+}
+
+.box>ul{overflow:auto;}
+
+.box>ul>li{
+		overflow:hidden;
+		float:left;
+		margin-left:2%;	
+	}
+.box>ul>li a{
+		display:block;
+		}
+
+.navi{
+	position:absolute;
+	top:65%;
+	left:20%;
+
+}
+
+.navi ul li{
+	padding:20px;
+	float:left;
+	font-size:1.7em;
+}
+
+#work .content,#skills .content,#contact .content{
+
+}
+
+.circle {
+
+            position:absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 25px; 
+
+            height: 25px;
+            
+            box-shadow:0,0,0,0.7;
+
+            border-radius: 50%; 
+
+            border:2px solid gray; 
+
+            transform: translate(-50%, -50%);
+            
+            transition:all;
+            
+            z-index:999;
+            pointer-events:none;
+        }	
+	
+
+	
+/*  ::-webkit-scrollbar : 스크롤바 영역에 대한 설정
+	::-webkit-scrollbar-thumb : 스크롤바 막대에 대한 설정
+	::-webkit-scrollbar-track  : 스크롤바 뒷 배경에 대한 설정 
+*/
+body::-webkit-scrollbar{
+	width:15px;
+}	
+
+body::-webkit-scrollbar-thumb{
+	border:3px solid orange;
+	background:white;
+	border-radius: 10px;
+}
+
+body::-webkit-scrollbar-trace{
+	background:rgba(33,122,244,1);
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1900px){
+#skills .left ul{
+	overflow:auto;
+}
+
+#skills .left ul li{
+	background:white;
+	width:45%;
+	margin-left:3%;
+	margin-top:3%;
+	float:left;
+	box-sizing:border-box;
+	height:150px;
+	border:1px solid gray;
+	background:#eee;
+}	
+
+#skills .left ul li:nth-child(1){
+	background:white;
+	width:93%;
+	margin-left:3%;
+	margin-top:3%;
+	float:left;
+	box-sizing:border-box;
+	height:150px;
+	border:1px solid gray;
+	background:#eee;
+	font-weight:bold;
+	font-size:3em;
+	padding:40px 100px;
+}	
+#skills .left ul li:nth-child(1) span{
+	margin-left:100px;
+}
+
+#skills .left ul li p{
+	margin-left:120px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li:nth-child(3) p{
+	margin-left:100px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li:nth-child(4) p{
+	margin-left:70px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li img{
+	width:20%;
+	margin-top:10px;
+	margin-left:110px;
+}		
+	
+#skills .right ul li img{
+	width:20%;
+	margin-top:10px;
+	margin-left:60px;
+}	
+
+#skills .right ul li:nth-child(4) img{
+	width:15%;
+	margin-top:10px;
+	margin-left:50px;
+}	
+	
+#skills .right ul li span{
+	width:10%;
+	margin-left:30px;
+	margin-top:20px;
+	font-size:1.5em;
+	position:absolute;
+}		
+
+#skills .right ul li p{
+	margin-left:110px;
+	font-size:1.2em;
+	margin-bottom:-10px;
+	margin-top:10px;
+}
+
+}
+@media screen and (max-width:1700px){
+
+#skills .left ul li:nth-child(1){
+	padding:0;
+}	
+#skills .left ul li:nth-child(1) span{
+	margin-left:150px;
+	margin-top:40px;
+	display:inline-block;
+}
+
+#skills .left ul li p{
+	margin-left:100px;
+	font-weight:bold;
+	font-size:1.5em;
+	margin-top:20px;
+}
+
+#skills .left ul li:nth-child(3) p{
+	margin-left:80px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li:nth-child(4) p{
+	margin-left:50px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li img{
+	width:20%;
+	margin-top:10px;
+	margin-left:90px;
+}		
+
+}
+
+@media screen and (max-width:1400px){
+#skills .left ul li:nth-child(1) span{
+	margin-left:120px;
+	margin-top:40px;
+	display:inline-block;
+}
+
+#skills .left ul li p{
+	margin-left:80px;
+	font-weight:bold;
+	font-size:1.5em;
+	margin-top:20px;
+}
+
+#skills .left ul li:nth-child(3) p{
+	margin-left:70px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li:nth-child(4) p{
+	margin-left:30px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li img{
+	width:25%;
+	margin-top:10px;
+	margin-left:80px;
+}	
+#skills .right ul li img{
+	width:20%;
+	margin-top:10px;
+	margin-left:40px;
+}	
+
+#skills .right ul li:nth-child(4) img{
+	width:15%;
+	margin-top:10px;
+	margin-left:50px;
+}	
+	
+#skills .right ul li span{
+	width:10%;
+	margin-left:30px;
+	margin-top:20px;
+	font-size:1.5em;
+	position:absolute;
+}		
+
+#skills .right ul li p{
+	margin-left:90px;
+	font-size:1.2em;
+	margin-bottom:-10px;
+	margin-top:10px;
+}
+
+
+.progress{
+  position: absolute;
+  top:0;
+  right:0;
+  z-index:99;
+}
+.progress::after{
+  content: '%';
+  
+}
+
+.progressbar{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress 5s ease forwards;
+}
+
+@keyframes progress{
+  0%{width: 0px}
+  100%{width: 60%;}
+}
+
+.progressbar2{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar2::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress2 5s ease forwards;
+}
+
+
+@keyframes progress2{
+  0%{width: 0px}
+  100%{width: 80%;}
+}
+
+.progressbar3{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar3::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress3 5s ease forwards;
+}
+
+
+@keyframes progress3{
+  0%{width: 0px}
+  100%{width: 60%;}
+}
+
+.progressbar4{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar4::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress4 5s ease forwards;
+}
+
+
+@keyframes progress4{
+  0%{width: 0px}
+  100%{width: 70%;}
+}
+
+.progressbar5{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar5::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress5 5s ease forwards;
+}
+
+
+@keyframes progress5{
+  0%{width: 0px}
+  100%{width: 75%;}
+}
+
+}
+
+@media screen and (max-width:1200px){
+	
+	body{font-size:11px;}
+	.content{width:95%;}
+	.mAllMenu{display:block;}
+	
+	/* 삼선메뉴 클릭시 보이는 주메뉴들  */
+	nav{
+	position:fixed;
+	width:50%;
+	height:100%;
+	right:-50%;
+	top:0%;
+	transform:translateY(0%); /* 이걸 지우면 값이 안보임 필요없다고 지우면 안됌 */
+	background:rgba(0,0,0,0.7);
+	}
+
+nav ul{
+	margin-top:100px;
+}
+
+nav ul li{
+	clear:left;
+	line-height:3;
+	font-size:1.3em;
+}
+
+nav ul li a{
+}
+
+
+#contact .left ul li img{
+	width:40%;
+	margin-left:20px;
+	margin-top:30px;
+}	
+
+#contact .left ul li span{
+	margin-top:10px;
+	margin-left:15px;
+	display:block;
+	font-size:1.4em;
+	font-weight:bold;
+}
+
+#contact .left ul li:nth-child(1) span{
+	margin-left:10px;
+}
+
+
+.ds{
+	overflow:hidden;
+	display:none;
+}
+
+section .content{
+	width:80%;
+	height:60%;
+	border:1px solid white;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+}
+
+section .content:nth-child(1){
+	width:80%;
+	height:70%;
+	border:1px solid white;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+}	
+
+.navi ul li{
+	font-size:1.3em;
+	margin-top:10px;
+	margin-left:-20px;
+}
+#skills .left ul li{
+	height:130px;
+}
+
+
+
+
+#skills .left ul li:nth-child(1) span{
+	margin-left:80px;
+	margin-top:40px;
+	display:inline-block;
+}
+
+#skills .left ul li p{
+	margin-left:55px;
+	font-weight:bold;
+	font-size:1.5em;
+	margin-top:20px;
+}
+
+#skills .left ul li:nth-child(3) p{
+	margin-left:40px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li:nth-child(4) p{
+	margin-left:10px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#skills .left ul li img{
+	width:25%;
+	margin-top:10px;
+	margin-left:50px;
+}	
+
+#skills .right ul{
+	overflow:auto;
+}
+
+#skills .right ul li{
+	background:white;
+	width:45%;
+	margin-left:3%;
+	margin-top:3%;
+	float:left;
+	box-sizing:border-box;
+	height:130px;
+	border:1px solid gray;
+	background:#eee;
+}	
+
+#skills .right ul li img{
+	width:25%;
+	margin-top:15px;
+	margin-left:10px;
+}	
+
+#skills .right ul li:nth-child(4) img{
+	width:15%;
+	margin-top:15px;
+	margin-left:10px;
+}	
+	
+#skills .right ul li span{
+	width:10%;
+	margin-left:20px;
+	margin-top:20px;
+	font-size:1.5em;
+	position:absolute;
+}		
+
+#skills .right ul li:nth-child(3) span{
+	width:10%;
+	margin-left:10px;
+	margin-top:20px;
+	font-size:1.3em;
+}		
+
+
+#skills .right ul li p{
+	margin-left:50px;
+	font-size:1.2em;
+	margin-bottom:-10px;
+	margin-top:10px;
+}
+
+
+.progress{
+  position: absolute;
+  top:0;
+  right:0;
+  z-index:99;
+}
+.progress::after{
+  content: '%';
+  
+}
+
+.progressbar{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress 5s ease forwards;
+}
+
+@keyframes progress{
+  0%{width: 0px}
+  100%{width: 60%;}
+}
+
+.progressbar2{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar2::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress2 5s ease forwards;
+}
+
+
+@keyframes progress2{
+  0%{width: 0px}
+  100%{width: 80%;}
+}
+
+.progressbar3{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar3::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress3 5s ease forwards;
+}
+
+
+@keyframes progress3{
+  0%{width: 0px}
+  100%{width: 60%;}
+}
+
+.progressbar4{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar4::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress4 5s ease forwards;
+}
+
+
+@keyframes progress4{
+  0%{width: 0px}
+  100%{width: 70%;}
+}
+
+.progressbar5{
+  width: 85%;
+  height: 15px;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #eee;
+  position:relative;
+  margin-left:15px;
+  margin-top:20px;
+}
+
+.progressbar5::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  height: 15px;
+  width:0;
+  background:skyblue;
+  animation: progress5 5s ease forwards;
+}
+
+
+@keyframes progress5{
+  0%{width: 0px}
+  100%{width: 75%;}
+}
+#work .left{
+	left:0;
+	height:100%;
+}
+
+}
+
+
+@media screen and (max-width:800px){
+#skills .right ul li img{
+	width:20%;
+	margin-top:20px;
+	margin-left:20px;
+}	
+
+#skills .right ul li:nth-child(4) img{
+	width:15%;
+	margin-top:10px;
+	margin-left:50px;
+}	
+	
+#skills .right ul li span{
+	width:10%;
+	margin-left:30px;
+	margin-top:20px;
+	font-size:1.5em;
+	position:absolute;
+}		
+
+#skills .right ul li p{
+	margin-left:60px;
+	font-size:1.2em;
+	margin-bottom:-10px;
+	margin-top:10px;
+}
+
+body{
+	min-width:800px;
+}
+}
